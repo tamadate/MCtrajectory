@@ -12,11 +12,13 @@ void MC::particleGeneration(void){
 			int z=iz*cellSize+zmin;
 
 			// file name generation
-			std::uniform_int_distribution<int> dist(0, 999);
+			std::uniform_int_distribution<int> dist(0, Nparticle-1);
 			int id=dist(rd);
 			std::ostringstream filename;
-			filename<<dir<<x<<"_"<<y<<"_"<<z<<"/result/position."<<id;
+			//filename<<dir<<x<<"_"<<y<<"_"<<z<<"/result/position."<<id;
+			filename<<dir<<"/position."<<id;
 			std::ifstream f(filename.str().c_str());
+			//std::cout<<filename.str().c_str()<<std::endl;
 
 			// generate particle(s)
 			particle p;

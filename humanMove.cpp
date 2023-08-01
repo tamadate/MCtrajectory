@@ -2,9 +2,10 @@
 
 void MC::humanMove(void){
 	for(auto &a : humans){
-		std::uniform_int_distribution<int> dist(-5, 5);
-		bool flag=true;
-		double dx,dy,dz;
+		std::uniform_int_distribution<int> dist(-1*vobj, vobj);
+		bool flag=true;			// out of calculation domain?
+		double dx,dy,dz;		// displacement to each of three directions
+		
 		while(flag){
 			flag=false;
 			dx=dist(rd);
